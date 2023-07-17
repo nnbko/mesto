@@ -20,3 +20,4 @@
 https://github.com/nnbko/mesto
 
 ## Ссылка на сайт
+https://nnbko.github.io/mesto/
