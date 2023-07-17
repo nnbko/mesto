@@ -1,0 +1,26 @@
+.page{
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #000;
+    margin: 0 auto;
+    max-width: 880px;
+    padding: 0 200px;
+    color: #fff;
+}
+
+@media (max-width:1024px) {
+    .page {
+      padding: 0 100px;
+    }
+    } 
+    
+    @media (max-width:768px) {
+    .page {
+      padding: 0 50px;
+    }
+    }
+    
+    @media (max-width:425px) {
+    .page{
+      padding: 0;
+    }
+    }
