@@ -6,8 +6,8 @@ const popupOpenClose = popup.querySelector('.popup__close');
 let formElement = document.querySelector('.popup__form')
 let nameInput = document.querySelector('.profile__name')
 let jobInput = document.querySelector('.profile__description')
-let nameText = document.querySelector('.popup__name_text')
-let jobText = document.querySelector('.popup_job_text')
+let nameText = document.querySelector('.popup__popup__holder_name_text')
+let jobText = document.querySelector('.popup_popup__holder_job_text')
 
 
 //инициализация переменных для лайка
