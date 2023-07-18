@@ -29,10 +29,10 @@ function popupOpen() {
 }
 //функции открытия и закрытия попапа 
 function openPopup(){
-    popup.classList.toggle('popup__visible');
+    popup.classList.add('popup_opened');
 }
 function closePopup(){
-    popup.classList.toggle('popup__visible');
+    popup.classList.remove('popup_opened');
 }
 //фунцкия формы изменения данных
 function handleFormSubmit(evt) {
