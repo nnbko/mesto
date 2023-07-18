@@ -1,39 +1,48 @@
+//инициализация переменных для открытия закрытия попапа
 const popup = document.querySelector('.popup');
 const popupOpenButton = document.querySelector('.profile__edit-button');
 const popupOpenClose = popup.querySelector('.popup__close');
-
+//инициализация переменных для изменения данных попапа
 let formElement = document.querySelector('.popup__form')
-
-let Save = document.querySelector('.popup__save')
 let nameInput = document.querySelector('.profile__name')
 let jobInput = document.querySelector('.profile__description')
-let nameText = document.querySelector('.popup__name')
-let jobText = document.querySelector('.popup__job')
+let nameText = document.querySelector('.popup__name_text')
+let jobText = document.querySelector('.popup_job_text')
 
-let elementsCards = document.querySelector('.elements__cards')
-let likeButton = elementsCards.querySelector('.elements__like')
-//получилось почему-то только на одной карточке лайк реализовать
-const likeToggle = function () {
-    likeButton.classList.toggle('elements__like_active');
+
+//инициализация переменных для лайка
+//let save = document.querySelector('.popup__save')
+//let elementsCards = document.querySelector('.elements__cards')
+//let likeButton = elementsCards.querySelector('.elements__like')
+
+//попытака реализации функции лайка
+//const likeToggle = function () {
+//    likeButton.classList.toggle('elements__like_active');
+//}
+
+
+//фунцкция передачи данныз в попап
+function popupOpen() {
+    openPopup(popupOpenButton);
+    nameText.value = nameInput.textContent;
+    jobText.value = jobInput.textContent;
 }
-
-const popupToggle = function () {
+//функции открытия и закрытия попапа 
+function openPopup(){
     popup.classList.toggle('popup__visible');
 }
-
+function closePopup(){
+    popup.classList.toggle('popup__visible');
+}
+//фунцкия формы изменения данных
 function handleFormSubmit(evt) {
     evt.preventDefault();
-    let a = nameText.value;
-    let b = jobText.value;
-    nameInput.textContent = a;
-    jobInput.textContent = b;
-    popupToggle();
-    console.log(nameInput);
-    console.log(jobInput);
-
+    nameInput.textContent = nameText.value;
+    jobInput.textContent = jobText.value;
+    closePopup();
 };
-
-likeButton.addEventListener('click', likeToggle);
-popupOpenButton.addEventListener('click', popupToggle);
-popupOpenClose.addEventListener('click', popupToggle);
+//обработчики событий
+//likeButton.addEventListener('click', likeToggle);
+popupOpenButton.addEventListener('click', popupOpen);
+popupOpenClose.addEventListener('click', closePopup);
 formElement.addEventListener("submit", handleFormSubmit);

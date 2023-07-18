@@ -15,12 +15,12 @@
     transition: opacity .5s ease;
   }
   
-  .popup__button:hover {
-    opacity: .6;
+  .popup__save:hover {
+    opacity: 0.8;
   }
   
   @media screen and (max-width: 768px) {
-    .popup__button {
+    .popup__save {
       width: 238px;
       margin: 15px 0 0;
       font-size: 14px;
