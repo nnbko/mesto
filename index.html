@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!-- не могу вопспоизвести ошибку с крестиком, у меня не воспроизводится -->
 
 <head>
     <meta charset="UTF-8">
@@ -44,7 +43,7 @@
             </form>
         </div>
     </div>
-    <div class="popup popup__full">
+    <div class="popup popup__card">
         <div class="popup__photo">
             <button class="popup__close popup__close_photo" type="button"></button>
             <img class="popup__image" src="#">
@@ -52,13 +51,13 @@
         </div>
     </div>
 
-    <div class="popup popup__add">
+    <div class="popup popup_add">
         <div class="popup__edit">
             <button class="popup__close popup__close_add"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup_from_add">
-                <input class="popup__holder popup__input_name" placeholder="Название" >
-                <input class="popup__holder popup__input_src" placeholder="Ссылка">
+            <form class="popup__form popup__from_add">
+                <input class="popup__holder popup__holder_input_name" type="text" name="name" placeholder="Название">
+                <input class="popup__holder popup__holder_input_src" type="text" name="source" placeholder="Ссылка">
                 <button class="popup__save" type="submit">Создать</button>
             </form>
         </div>
@@ -66,7 +65,7 @@
     <template id="elements-add">
         <div class="elements__card">
             <button class="elements__delete"></button>
-            <img src="#" alt="фото" class="elements__image">
+            <img src="#" alt="фото" class="elements__image" alt="элементы">
             <div class="elements__text">
                 <h2 class="elements__title"></h2>
                 <button class="elements__like" type="button"></button>

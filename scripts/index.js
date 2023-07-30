@@ -13,15 +13,15 @@ let jobText = document.querySelector('.popup__holder_job_text')
 let elements = document.querySelector('.elements')
 let elementsImage = elements.querySelector('.elements__image')
 let elementsTitle = document.querySelector('.elements__title')
-let popupFull = document.querySelector('.popup__full')
+let popupFull = document.querySelector('.popup__card')
 let popupCloseFull = document.querySelector('.popup__close_photo')
 let popupImage = document.querySelector('.popup__image')
 let popupTitle = document.querySelector('.popup__title-photo')
 //добавление карточки
 let elAdd = document.querySelector('.profile__add-button')
-let popupAdd = document.querySelector('.popup__add')
-let popupName = popupAdd.querySelector('.popup__input_name')
-let popupSrc = popupAdd.querySelector('.popup__input_src')
+let popupAdd = document.querySelector('.popup_add')
+let popupName = popupAdd.querySelector('.popup__holder_input_name')
+let popupSrc = popupAdd.querySelector('.popup__holder_input_src')
 let popupClose = popupAdd.querySelector('.popup__close_add')
 
 let card = document.querySelector('.elements__card')
@@ -111,7 +111,7 @@ const render = () => {
         elementsCard.append(createEl(item));
     });
 };
-let popupS = document.querySelector('.popup_from_add')
+let popupS = document.querySelector('.popup__from_add')
 function addCard(evt) {
     evt.preventDefault();
     elementsCard.prepend(createEl({name: popupName.value, link: popupSrc.value}));
