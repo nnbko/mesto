@@ -13,7 +13,7 @@ let jobText = document.querySelector('.popup__holder_job_text')
 let elements = document.querySelector('.elements')
 let elementsImage = elements.querySelector('.elements__image')
 let elementsTitle = document.querySelector('.elements__title')
-let popupFull = document.querySelector('.popup__card')
+let popupFull = document.querySelector('.popup_card')
 let popupCloseFull = document.querySelector('.popup__close_photo')
 let popupImage = document.querySelector('.popup__image')
 let popupTitle = document.querySelector('.popup__title-photo')
@@ -111,7 +111,7 @@ const render = () => {
         elementsCard.append(createEl(item));
     });
 };
-let popupS = document.querySelector('.popup__from_add')
+let popupS = document.querySelector('.popup__form_add')
 function addCard(evt) {
     evt.preventDefault();
     elementsCard.prepend(createEl({name: popupName.value, link: popupSrc.value}));
