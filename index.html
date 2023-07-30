@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <!-- не могу вопспоизвести ошибку с крестиком, у меня не воспроизводится -->
+<!-- не могу вопспоизвести ошибку с крестиком, у меня не воспроизводится -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,48 +27,6 @@
         </section>
 
         <section class="elements">
-            <div class="elements__card">
-                <img src="./images/Карачаевск.jpg" alt="Карачаевск" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Карачаевск</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Поле и горы" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Горы" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Поле и горы" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Горы" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
-            <div class="elements__card">
-                <img src="./images/Карачаевск.jpg" alt="Карачаевск" class="elements__image">
-                <div class="elements__text">
-                    <h2 class="elements__title">Карачаево-Черкесская Республика</h2>
-                    <button class="elements__like" type="button"></button>
-                </div>
-            </div>
         </section>
     </main>
     <footer class="footer">
@@ -85,6 +44,36 @@
             </form>
         </div>
     </div>
+    <div class="popup popup__full">
+        <div class="popup__photo">
+            <button class="popup__close popup__close_photo" type="button"></button>
+            <img class="popup__image" src="#">
+            <h3 class="popup__title-photo"></h3>
+        </div>
+    </div>
+
+    <div class="popup popup__add">
+        <div class="popup__edit">
+            <button class="popup__close popup__close_add"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup_from_add">
+                <input class="popup__holder popup__input_name" placeholder="Название" >
+                <input class="popup__holder popup__input_src" placeholder="Ссылка">
+                <button class="popup__save" type="submit">Создать</button>
+            </form>
+        </div>
+    </div>
+    <template id="elements-add">
+        <div class="elements__card">
+            <button class="elements__delete"></button>
+            <img src="#" alt="фото" class="elements__image">
+            <div class="elements__text">
+                <h2 class="elements__title"></h2>
+                <button class="elements__like" type="button"></button>
+            </div>
+        </div>
+    </template>
+    <script src="./scripts/elements.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 

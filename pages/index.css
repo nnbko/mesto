@@ -29,3 +29,10 @@
 @import url(../blocks/popup/__close/popup__close.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/elements/__like/_activ/elements__like_active.css);
+@import url(../blocks/popup/__full/popup__full.css);
+@import url(../blocks/popup/__photo/popup__photo.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__title/popup__title-photo.css);
+@import url(../blocks/popup/__add/popup__add.css);
+@import url(../blocks/elements/__delete/elements__delete.css);
+
