@@ -23,6 +23,7 @@ const popupSrc = popupAdd.querySelector('.popup__holder_input_src')
 const popupClose = popupAdd.querySelector('.popup__close_add')
 const card = document.querySelector('.elements__card')
 const template = document.querySelector('#elements-add').content;
+
 function clickOnOverlay(evt) {
     if (evt.target.classList.contains('popup')) {
         closePopup(evt.target);
@@ -129,7 +130,7 @@ function addCard(evt) {
     cardsContainer.prepend(createCard({ name: popupName.value, link: popupSrc.value }));
     closePopupAdd();
     evt.target.reset();
-    enableButton(cardForm,validationSettings);
+    disableButton(cardForm,validationSettings);
 };
 
 cardForm.addEventListener('submit', addCard)
