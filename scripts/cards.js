@@ -11,33 +11,33 @@ export class Card {
     this._handleImageClick = handleImageClick;
   };
 
-  _CardData() {
+  _fillCardData() {
     this._cardElementPicture.src = this._cardLink;
     this._cardElementPicture.alt = this._cardName;
     this._cardElementTitle.textContent = this._cardName;
   };
 
   _setEventListeners() {
-    this._cardElementButtonLike.addEventListener('click', () => {this._CardLike()});
-    this._cardElementButtonDelete.addEventListener('click', () => {this._CardDelete()});
-    this._cardElementPicture.addEventListener('click', () => {this._CardOpen()});
+    this._cardElementButtonLike.addEventListener('click', () => {this._handleCardLike()});
+    this._cardElementButtonDelete.addEventListener('click', () => {this._handleCardDelete()});
+    this._cardElementPicture.addEventListener('click', () => {this._handleCardOpen()});
   }
 
-  _CardLike() {
+  _handleCardLike() {
     this._cardElementButtonLike.classList.toggle('elements__like_active');
   };
 
-  _CardDelete() {
+  _handleCardDelete() {
     this._cardNew.remove();
     this._cardNew = null;
   };
 
-  _CardOpen() {
+  _handleCardOpen() {
     this._handleImageClick(this._cardLink, this._cardName);
   };
 
   createCard() {
-    this._CardData();
+    this._fillCardData();
     this._setEventListeners();
     return this._cardNew;
   };
