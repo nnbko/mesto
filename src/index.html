@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Место</title>
-</head> 
+</head>
+
 <body class="page">
     <header class="header">
         <img class="header__logo" src="<%=require('./styles/images/logo.svg')%>" alt="лого">
@@ -41,8 +42,8 @@
                     <span class="popup__input-error name-error"></span>
                 </div>
                 <div class="popup__form-container">
-                    <input class="popup__holder popup__holder_job_text" type="text" name="description" placeholder="Описание"
-                        minlength="2" maxlength="200" id="description" required>
+                    <input class="popup__holder popup__holder_job_text" type="text" name="description"
+                        placeholder="Описание" minlength="2" maxlength="200" id="description" required>
                     <span class="popup__input-error description-error"></span>
                 </div>
                 <button class="popup__save" type="submit">Сохранить</button>
@@ -63,12 +64,12 @@
             <h2 class="popup__title">Новое место</h2>
             <form class="popup__form popup__form_add">
                 <div class="popup__form-container">
-                    <input class="popup__holder popup__holder_input_name" type="text" name="Название"
+                    <input class="popup__holder popup__holder_input_name" type="text" name="name"
                         placeholder="Название" id="input-img-title" minlength="2" maxlength="30" required>
                     <span class="popup__input-error input-img-title-error"></span>
                 </div>
                 <div class="popup__form-container">
-                    <input class="popup__holder popup__holder_input_src" type="url" name="Ссылка" placeholder="Ссылка"
+                    <input class="popup__holder popup__holder_input_src" type="url" name="link" placeholder="Ссылка"
                         id="input-link" required>
                     <span class="popup__input-error input-link-error"></span>
                 </div>
