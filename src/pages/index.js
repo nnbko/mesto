@@ -1,12 +1,12 @@
 import './index.css';
 import { Card } from "../components/cards.js";
 import { FormValidator } from "../components/validation.js";
-import { initialCards } from "../utils/elements.js";
+import { initialCards } from "../utils/constants.js";
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
 import { Section } from '../components/section.js';
 import { UserInfo } from '../components/UserInfo.js';
-import {profilePopup, buttonOpenProfilePopup, nameText, jobText, elAdd, popupAddPhoto, validationSettings} from '../utils/elements.js'
+import {profilePopup, buttonOpenProfilePopup, nameText, jobText, elAdd, popupAddPhoto, validationSettings} from '../utils/constants.js'
 
 
 
