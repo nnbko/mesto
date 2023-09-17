@@ -6,27 +6,8 @@ import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
 import { Section } from '../components/section.js';
 import { UserInfo } from '../components/UserInfo.js';
+import {profilePopup, buttonOpenProfilePopup, nameText, jobText, elAdd, popupAddPhoto, validationSettings} from '../utils/elements.js'
 
-
-
-const profilePopup = document.querySelector('.popup_profile');
-const buttonOpenProfilePopup = document.querySelector('.profile__edit-button');
-
-const nameText = document.querySelector('.popup__holder_name_text')
-const jobText = document.querySelector('.popup__holder_job_text')
-
-const elAdd = document.querySelector('.profile__add-button')
-const popupAddPhoto = document.querySelector('.popup_add')
-
-
-const validationSettings = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__holder',
-    submitButtonSelector: '.popup__save',
-    inactiveButtonClass: 'popup__submit_inactive',
-    inputErrorClass: 'popup__input_invalid',
-    errorClass: 'form__input-error_visible'
-};
 
 
 
