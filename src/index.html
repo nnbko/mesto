@@ -14,7 +14,10 @@
     </header>
     <main class="main">
         <section class="profile">
-            <img class="profile__avatar" src="<%=require('./styles/images/avatar.jpg')%>" alt="аватар">
+            <div class="profile__avatar_edit">
+                <img class="profile__avatar" src="<%=require('./styles/images/avatar.jpg')%>" alt="аватар"  name="avatar">
+                <button type="button" class="profile__avatar-edit-button"></button>
+            </div>
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <button class="profile__edit-button" type="button"></button>
@@ -35,7 +38,7 @@
         <div class="popup__edit">
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form popup__form_profile" name="popupFormEdit">
+            <form action="./pages/index.js" class="popup__form popup__form_profile" name="popupFormEdit">
                 <div class="popup__form-container">
                     <input class="popup__holder popup__holder_name_text" type="text" name="name" placeholder="Имя"
                         minlength="2" maxlength="40" id="name" required>
@@ -62,10 +65,10 @@
         <div class="popup__edit">
             <button class="popup__close popup__close_add"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form_add">
+            <form action="./pages/index.js" class="popup__form popup__form_add">
                 <div class="popup__form-container">
-                    <input class="popup__holder popup__holder_input_name" type="text" name="name"
-                        placeholder="Название" id="input-img-title" minlength="2" maxlength="30" required>
+                    <input class="popup__holder popup__holder_input_name" type="text" name="name" placeholder="Название"
+                        id="input-img-title" minlength="2" maxlength="30" required>
                     <span class="popup__input-error input-img-title-error"></span>
                 </div>
                 <div class="popup__form-container">
@@ -83,10 +86,37 @@
             <img src="#" alt="фото" class="elements__image">
             <div class="elements__text">
                 <h2 class="elements__title"></h2>
-                <button class="elements__like" type="button"></button>
+                <div class="elements__group">
+                    <button class="elements__like" type="button"></button>
+                    <h3 class="element__like-count" name="">0</h3>
+                </div>
             </div>
         </div>
     </template>
+    <div class="popup popup_confirm">
+        <div class="popup__edit">
+            <h2 class="popup__title">Вы уверены?</h2>
+            <button class="popup__close"></button>
+            <form action="./pages/index.js" name="formConfirmation" class="popup__form popup__form-confirm" novalidate>
+                <button class="popup__save" type="submit">Да</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_avatar">
+        <div class="popup__edit">
+            <h2 class="popup__title">Обновить аватар</h2>
+            <button class="popup__close"></button>
+            <form action="./pages/index.js" name="formConfirmation" class="popup__form popup__form_avatar-edit" novalidate>
+                <div class="popup__form-container">
+                    <input class="popup__holder popup__holder_input_src" type="url" name="link-avatar"
+                        placeholder="Ссылка на аватар" id="popup-avatar-url" required>
+                    <span class="popup__input-error popup-avatar-url-error"></span>
+                </div>
+                <button class="popup__save" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
