@@ -1,18 +1,22 @@
+export const profilePopup = document.querySelector('.popup_profile');
+export const popupAddPhoto = document.querySelector('.popup_add')
+export const popupAvatar = document.querySelector('.popup_avatar');
+export const popupAdd = document.querySelector('.popup_add');
+
+export const openButtonAvatar = document.querySelector('.profile__avatar-edit-button');
+export const openButtonpProfile = document.querySelector('.profile__edit-button');
+export const openButtonAdd = document.querySelector('.profile__add-button');
+
+export const formPopupEditProfile = profilePopup.querySelector('.popup__form_profile');
+export const formPopupAvatarEdit = popupAvatar.querySelector('.popup__form_avatar-edit');
+export const formAddElement = popupAdd.querySelector('.popup__form_add');
+
+export const nameText = formPopupEditProfile.querySelector('.popup__holder_name_text');
+export const jobText = formPopupEditProfile.querySelector('.popup__holder_job_text');
 
 
-export const captionPopupZoomImage = document.querySelector(".popup__title-photo");
-export const imagePopupZoomImage = document.querySelector(".popup__image");
-export const buttonOpenProfilePopup = document.querySelector(".profile__edit-button");
-const profilePopup = document.querySelector(".popup_profile");
-export const formPopupEditProfile = profilePopup.querySelector(".popup__form_profile");
-export const elAdd = document.querySelector(".profile__add-button");
-export const formPopupAddCard = document.querySelector(".popup__form_add");
-export const buttonOpenPopupAvatarEdit = document.querySelector(".profile__avatar-edit-button");
-export const formPopupAvatarEdit = document.querySelector('.popup__form_avatar-edit');
-export const popupConfirmationDeleteCard = document.querySelector('.popup_confirm')
-export const popupFormConfirmation = popupConfirmationDeleteCard.querySelector('.popup__form-confirm')
- 
-export const validationConfig = {
+
+export const validationSettings = {
     formSelector: '.popup__form',
     inputSelector: '.popup__holder',
     submitButtonSelector: '.popup__save',
@@ -21,3 +25,10 @@ export const validationConfig = {
     errorClass: 'form__input-error_visible'
 };
 
+export const options = {
+    url: 'https://mesto.nomoreparties.co/v1/cohort-76',
+    headers: {
+        authorization: '7cbb9037-1aa3-4e4a-b012-940234b48bc1',
+        'Content-Type': 'application/json'
+    }
+}

@@ -1,43 +1,38 @@
-import Popup from "./popup.js";
+import { Popup } from './popup.js';
 
-export default class PopupWithForm extends Popup {
-    constructor({popupSelector, handleSubmit}) {
-        super({popupSelector});
+class PopupWithForm extends Popup {
+    constructor(popupSelector, { handleSubmit = null }) {
+        super(popupSelector);
         this._handleSubmit = handleSubmit;
         this._form = this._popup.querySelector('.popup__form');
-        this._inputList = this._form.querySelectorAll('.popup__holder')                        
-        this._submitButton = this._form.querySelector(".popup__save");
+        this._inputList = this._form.querySelectorAll('.popup__holder');
+        this._submitButton = this._form.querySelector('.popup__save');
+        this._submitBtnText = this._submitButton.textContent;
     }
-
     _getInputValues() {
-        const inputValuesObj = {}
+        const inputValuesObj = {};
         this._inputList.forEach(input => {
-            inputValuesObj[input.name] = input.value        
-        });        
+            inputValuesObj[input.name] = input.value;
+        });
         return inputValuesObj;
     }
-
-    setInputValues(data) {        
-        this._inputList.forEach((input) => {                     
-            input.value = data[input.name];            
-        });        
-    } 
-
-    setEventListeners() {                
+    setEventListeners() {
+        super.setEventListeners();
         this._form.addEventListener('submit', (evt) => {
             evt.preventDefault();
-            this._handleSubmit(this._getInputValues());            
-        });        
-        super.setEventListeners();
-        
+            this._handleSubmit(this._getInputValues());
+        });
     }
-
-    setSubmitButtonText(text) {
-        this._submitButton.textContent = text;
+    renderLoading(isLoading, loadingText = 'Сохранение...') {
+        if (isLoading) {
+            this._submitButton.textContent = loadingText;
+        } else {
+            this._submitButton.textContent = this._submitBtnText;
+        }
     }
-
-    close() {                
-        this._form.reset()
-        super.close();                
+    close() {
+        super.close();
+        this._form.reset();
     }
 }
+export { PopupWithForm }
