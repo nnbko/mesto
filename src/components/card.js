@@ -1,12 +1,12 @@
 class Card {
-  constructor(data, templateSelector, handleCardLike, handleTrashClick, idProfile, renderLikeCard) {
+  constructor(data, templateSelector, handleCardLike, handleTrashClick, idProfile, handleImageClick) {
     this._data = data;
     this._ownerId = data.owner._id;
     this._idProfile = idProfile;
-    this._openPopupZoomImage = renderLikeCard;
+    this._openPopupZoomImage = handleImageClick;
     this._openPopupConfirmation = handleTrashClick;
     this._handleCardLike = handleCardLike;
-    this._template = templateSelector;
+    this._templateSelector = templateSelector;
     this._element = this._getTemplate();
     this._cardImage = this._element.querySelector(".elements__image");
     this._cardTitle = this._element.querySelector(".elements__title");
@@ -16,7 +16,7 @@ class Card {
   }
   _getTemplate() {
     return document
-      .querySelector(this._template)
+      .querySelector(this._templateSelector)
       .content.querySelector(".elements__card")
       .cloneNode(true);
   }
@@ -27,6 +27,7 @@ class Card {
     this._cardTitle.textContent = this._data.name;
     this._setEventListeners();
     this._checkDeleteButtonVisibility();
+    this._updateLike();
     return this._element;
   }
   _setEventListeners() {
@@ -37,7 +38,7 @@ class Card {
     this._deleteButton.addEventListener("click", () => {
       this._openPopupConfirmation(this);
     });
-    this._updateLike();
+    
 
     this._cardImage.addEventListener("click", () => {
       this._openPopupZoomImage(this._data.link, this._data.name);

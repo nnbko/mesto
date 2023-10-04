@@ -1,7 +1,7 @@
 class Api {
-    constructor(options) {
-        this._baseUrl = options.url;
-        this._headers = options.headers;
+    constructor(apiOptions) {
+        this._baseUrl = apiOptions.url;
+        this._headers = apiOptions.headers;
     }
 
     _getData(res) {
@@ -11,7 +11,7 @@ class Api {
         return res.json();
     }
 
-    getUserInfoApi() {
+    getUserInfo() {
         return fetch(`${this._baseUrl}/users/me`, {
             headers: this._headers
         })
@@ -67,14 +67,8 @@ class Api {
         })
             .then(res => this._getData(res))
     }
-    getCardById(idCard) {
-        return fetch(`${this._baseUrl}/cards/${idCard}`, {
-            headers: this._headers
-        })
-            .then(res => this._getData(res))
-    }
     getAllInfo() {
-        return Promise.all([this.getUserInfoApi(), this.getInitialCards()])
+        return Promise.all([this.getUserInfo(), this.getInitialCards()])
     }
 };
 export { Api };

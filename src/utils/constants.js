@@ -4,12 +4,11 @@ export const popupAvatar = document.querySelector('.popup_avatar');
 export const popupAdd = document.querySelector('.popup_add');
 
 export const openButtonAvatar = document.querySelector('.profile__avatar-edit-button');
-export const openButtonpProfile = document.querySelector('.profile__edit-button');
+export const openButtonProfile = document.querySelector('.profile__edit-button');
 export const openButtonAdd = document.querySelector('.profile__add-button');
 
 export const formPopupEditProfile = profilePopup.querySelector('.popup__form_profile');
 export const formPopupAvatarEdit = popupAvatar.querySelector('.popup__form_avatar-edit');
-export const formAddElement = popupAdd.querySelector('.popup__form_add');
 
 export const nameText = formPopupEditProfile.querySelector('.popup__holder_name_text');
 export const jobText = formPopupEditProfile.querySelector('.popup__holder_job_text');
@@ -25,7 +24,7 @@ export const validationSettings = {
     errorClass: 'form__input-error_visible'
 };
 
-export const options = {
+export const apiOptions = {
     url: 'https://mesto.nomoreparties.co/v1/cohort-76',
     headers: {
         authorization: '7cbb9037-1aa3-4e4a-b012-940234b48bc1',

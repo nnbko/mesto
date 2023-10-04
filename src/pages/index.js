@@ -1,17 +1,17 @@
 import './index.css'
 import {
   popupAddPhoto,
-  options,
+  apiOptions,
   validationSettings,
   profilePopup,
   formPopupAvatarEdit,
   openButtonAvatar,
-  openButtonpProfile,
+  openButtonProfile,
   openButtonAdd,
   nameText,
   jobText
 } from '../utils/constants.js';
-import { Card } from '../components/cards.js';
+import { Card } from '../components/card.js';
 import { FormValidator } from '../components/validation.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
@@ -20,7 +20,7 @@ import { UserInfo } from '../components/UserInfo.js';
 import { PopupConfirm } from '../components/PopupWithConfirm.js';
 import { Api } from '../components/Api.js';
 let idProfile = null;
-const api = new Api(options);
+const api = new Api(apiOptions);
 
 api.getAllInfo()
   .then(([userData, cardAll]) => {
@@ -47,18 +47,18 @@ const cardsSection = new Section({
 }, '.elements');
 
 function createCard(data) {
-  const newCard = new Card(data, '.elements-add', handleCardLike, handleTrashClick, idProfile, renderLikeCard);
+  const newCard = new Card(data, '.elements-add', handleCardLike, handleTrashClick, idProfile, openImagePopup);
   return newCard.generateCard();
 }
 
-function renderLikeCard(url, text) {
+function openImagePopup(url, text) {
   popupWithImage.open(url, text);
 };
 
-function handleCardLike(data) {
-  api.changeCardLike(data.getId(), data.isLiked())
+function handleCardLike(card) {
+  api.changeCardLike(card.getId(), card.isLiked())
     .then((res) => {
-      data.setLikesData(res)
+      card.setLikesData(res)
     })
     .catch(err => console.log(err))
 };
@@ -115,8 +115,7 @@ const popupFormEdit = new PopupWithForm('.popup_profile', {
         userInfo.setUserInfo({
           profile: res.name,
           description: res.about,
-          avatar: res.avatar,
-          _id: res._id
+          avatar: res.avatar
         })
         popupFormEdit.close()
       })
@@ -135,8 +134,7 @@ const popupFormAvatar = new PopupWithForm('.popup_avatar', {
         userInfo.setUserInfo({
           profile: res.name,
           description: res.about,
-          avatar: res.avatar,
-          _id: res._id
+          avatar: res.avatar
         })
         popupFormAvatar.close()
       })
@@ -146,12 +144,6 @@ const popupFormAvatar = new PopupWithForm('.popup_avatar', {
       })
   }
 });
-
-validationAvatar.enableValidation();
-editValidator.enableValidation();
-addValidator.enableValidation();
-
-
 popupWithImage.setEventListeners();
 popupWithConfirm.setEventListeners();
 popupFormAdd.setEventListeners();
@@ -165,19 +157,20 @@ function handleOpenEditProfilePopup() {
   nameText.value = userData.profile;
   jobText.value = userData.description;
   editValidator.removeErrors();
+  editValidator.disableSubmitButton();
 };
 
 function handleOpenEditAvatarPopup() {
   popupFormAvatar.open();
   validationAvatar.removeErrors();
-  validationAvatar._resetSaveButtonState();
+  validationAvatar.disableSubmitButton();
 };
 
 function handleOpenAddCardPopup() {
   popupFormAdd.open();
   addValidator.removeErrors();
-  addValidator._resetSaveButtonState();
+  addValidator.disableSubmitButton();
 };
-openButtonpProfile.addEventListener('click', handleOpenEditProfilePopup);
+openButtonProfile.addEventListener('click', handleOpenEditProfilePopup);
 openButtonAvatar.addEventListener('click', handleOpenEditAvatarPopup);
 openButtonAdd.addEventListener('click', handleOpenAddCardPopup);
