@@ -11,13 +11,13 @@ import {
   nameText,
   jobText
 } from '../utils/constants.js';
-import { Card } from '../components/card.js';
-import { FormValidator } from '../components/validation.js';
+import { Card } from '../components/Card.js';
+import { FormValidator } from '../components/FormValidator.js';
 import { PopupWithForm } from '../components/PopupWithForm.js';
 import { PopupWithImage } from '../components/PopupWithImage.js';
 import { Section } from '../components/Section.js';
 import { UserInfo } from '../components/UserInfo.js';
-import { PopupConfirm } from '../components/PopupWithConfirm.js';
+import { PopupWithConfirm } from '../components/PopupWithConfirm.js';
 import { Api } from '../components/Api.js';
 let idProfile = null;
 const api = new Api(apiOptions);
@@ -31,7 +31,7 @@ api.getAllInfo()
 
 
 const popupWithImage = new PopupWithImage('.popup_card');
-const popupWithConfirm = new PopupConfirm('.popup_confirm', null);
+const popupWithConfirm = new PopupWithConfirm('.popup_confirm', null);
 
 const userInfo = new UserInfo({
   nameSelector: '.profile__name',
